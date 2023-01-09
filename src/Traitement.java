@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Traitement {
 
     public static void main(String[] args) {
@@ -14,5 +16,15 @@ public class Traitement {
 
         p1.donneesProduit();
         p2.donneesProduit();
+
+        ArrayList<Produit> liste = new ArrayList<Produit>();
+
+        liste.add(new Produit("ELEC120", "FRIGO", 100, 650, 15, c3));
+        liste.add(new Produit("INF2", "PC ASUS", 300, 650, 30, c1));
+        liste.add(new Produit("INF2", "PC ASUS", 300, 650, 30, c1));
+
+        for (Produit prod : liste) {
+            prod.donneesProduit();
+        }
     }
 }
