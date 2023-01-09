@@ -2,46 +2,40 @@
 public class Produit {
 
     //attributs
-
-    private long codeProduit;
+    private String codeProduit;
     private String nom;
     private int qte;
     private double prix;
-    private int stock;
+    private int stock_sec;
+
+    private Categorie categorie;
 
     //Manque de l'attribut Categorie
-    public Produit(long codeProduit, String nom, int qte, double prix, int stock)
-    {
+    public Produit(String codeProduit, String nom, int qte, double prix, int stock_secu, Categorie categorie) {
         this.codeProduit = codeProduit;
         this.nom = nom;
         this.qte = qte;
         this.prix = prix;
-        this.stock = stock;
-
+        this.stock_sec = stock_secu;
+        this.categorie = categorie;
     }
 
-    public Produit(long codeProduit, String nom, int qte)
-    {
+    public Produit(String codeProduit, String nom, int qte) {
         this.codeProduit = codeProduit;
         this.nom = nom;
         this.qte = qte;
         this.prix = prix;
-        this.stock = stock;
-
+        this.stock_sec = stock_sec;
     }
 
     //approvisionnement
     
-    public void setQtePlus(int qte)
-
-    {
+    public void setQtePlus(int qte)  {
         this.qte += qte;
     }
     //retour produit
 
-    public void setQteMoins(int qte)
-
-    {
+    public void setQteMoins(int qte) {
         this.qte -= qte;
     }
 
@@ -56,26 +50,23 @@ public class Produit {
 
     public void securiteQte()
     {
-        if (qte <= stock)
+        if (qte <= stock_sec)
             System.out.println("La quantité éxcède le stock de sécurité, réapprovisionnement nécessaire.");
     }
     //validation de la commande
 
     public boolean validation(int qte)
     {
-        if(qte - qte < stock)  //Condition erronée !!!
+        if(this.qte - qte < stock_sec)  //Condition erronée !!!
             return false;
         else
             return true;
     }
     //affichage de toute les données concernant un produit
 
-    public void donneesProduit()
-    {
-        System.out.println(nom + qte + prix + stock + codeProduit);
+    public void donneesProduit()   {
+        System.out.println(codeProduit + " " + this.nom + " " + this.qte + " "+ this.prix + " " + " " + this.stock_sec + " " + this.categorie.getNomCategorie());
     }
-
-    
 
 }
 
