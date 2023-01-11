@@ -24,8 +24,6 @@ public class Produit {
         this.codeProduit = codeProduit;
         this.nom = nom;
         this.qte = qte;
-        this.prix = prix;
-        this.stock_sec = stock_sec;
     }
 
     //approvisionnement
@@ -57,7 +55,7 @@ public class Produit {
 
     public boolean validation(int qte)
     {
-        if(this.qte - qte < stock_sec)  //Condition erronée !!!
+        if(this.qte - qte < stock_sec)  //SI on atteint le stock de secu -> signaler l'erreur
             return false;
         else
             return true;

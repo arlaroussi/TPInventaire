@@ -3,9 +3,7 @@ public class Categorie
     private String nomCategorie;
     private long codeCategorie;
 
-    public Categorie(long codeCategorie, String nomCategorie)
-
-    {
+    public Categorie(long codeCategorie, String nomCategorie) {
         this.codeCategorie = codeCategorie;
         this.nomCategorie = nomCategorie;
     }
