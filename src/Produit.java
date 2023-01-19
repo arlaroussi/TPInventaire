@@ -18,6 +18,7 @@ public class Produit {
         this.prix = prix;
         this.stock_sec = stock_secu;
         this.categorie = categorie;
+
     }
 
     public Produit(String codeProduit, String nom, int qte) {
